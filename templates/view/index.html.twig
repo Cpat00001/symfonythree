@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}This is {{ page }}{% endblock %}
+
+{% block body %}
+
+<h5>Hello {{ user.nickname }}</h5>
+<p>Today is {{date}}, your age is {{ user.age }}
+    you are visiting {{page}} and your name is {{ user.name}}</p>
+
+<h5>Here is your basket:</h5>
+
+{% if shopping_list is empty %}
+    <h5>You haven't chosen any item yet.Please add some items to your basket</h5>
+{% else %}
+    <ul>
+        {% for item in shopping_list %}
+            <li>{{ item }}</li>
+        {% endfor%}
+    </ul>
+{% endif %}
+
+{% endblock %}
